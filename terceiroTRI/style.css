@@ -1,9 +1,33 @@
 @charset "UTF-8";
 
 body{
-    background-color: antiquewhite;
+    background-color: rgb(255, 255, 255);
 }
 
 h1{
     text-align: center;
+}
+
+div.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+li{
+    list-style: none;
+    width: 90px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 10px;
+    background-color: brown;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    padding-left: 20px;
+   
+   
 }
