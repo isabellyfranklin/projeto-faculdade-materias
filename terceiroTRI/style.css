@@ -31,5 +31,6 @@ a{
 }
 
 li:hover{
+    cursor: pointer;
     background-color: black;
 }
