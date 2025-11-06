@@ -1,13 +1,17 @@
 @charset "UTF-8";
 
 body{
-    background-color: black;
+    background-color: rgb(40, 39, 39);
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
 h1{
     text-align: center;
+}
+
+h2{
+    padding: 10px;
 }
 
 div.container{
@@ -17,6 +21,13 @@ div.container{
 }
 
 li{
+    display: flex;
+    justify-items: center;  /* alinhamento - */
+    align-items: center;    /* alinhamento |*/
+    justify-content: center;
+    align-content:center ;
+
+
     list-style: none;
     width: 90px;
     height: 40px;
@@ -29,11 +40,10 @@ li{
 a{
     text-decoration: none;
     color: white;
-    padding-left: 20px;
 }
 
 li:hover{
     cursor: pointer;
-    background-color: aliceblue;
-    color: black;
+    background-color: rgb(107, 105, 105);
+    color: rgb(0, 0, 0);
 }
