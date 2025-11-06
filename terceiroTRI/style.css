@@ -35,4 +35,5 @@ a{
 li:hover{
     cursor: pointer;
     background-color: aliceblue;
+    color: black;
 }
