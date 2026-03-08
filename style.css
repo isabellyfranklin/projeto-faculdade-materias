@@ -1,5 +1,98 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Rashi+Hebrew:wght@100..900&display=swap');
+
 body{
-    background-color: azure;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Rashi Hebrew", serif;
+    font-weight: lighter;
+    background: linear-gradient(to left, #8C4C3550 50% ,#8C4C35 50%);
+    overflow: hidden;
 }
+
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    
+
+    list-style: none;
+    margin: 0px;
+}
+
+.navbar li{
+    font-size: 20px;
+
+    font-weight: 400;
+    padding: 20px;
+    margin-top: 15px;
+    margin-left: 24px;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
+
+
+main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerSegundario{
+    display: flex;
+    flex-flow: column nowrap;
+   
+    font-weight: lighter;
+    
+}
+
+h1{
+    font-size: 150px;
+    margin: 0;
+    line-height: 0.7;
+}
+
+h2{
+    font-size: 40px;
+    margin: 0;
+}
+
+
+.principal{
+    width: 50%;
+    margin-left: 40px;
+    margin-bottom: 230px;
+}
+
+figure{
+    width: 50%;
+}
+
+figure img{
+    width: 900px;
+    height: 680px;
+}
+
+.trimestre{
+    list-style: none;
+}
+
+.trimestre li{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin-bottom:10px ;
+}
+
+.trimestre a{
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+}
+
