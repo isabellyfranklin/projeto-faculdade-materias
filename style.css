@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body{
     padding: 0;
@@ -8,7 +9,7 @@ body{
     box-sizing: border-box;
     font-family: "Inria Serif", serif;
     font-weight: lighter;
-    background: linear-gradient(to left, #8C4C3550 50% ,#8C4C35 50%);
+    background: linear-gradient(to left, #8C4C3550 40% ,#8C4C35 40%);
     overflow: hidden;
 }
 
@@ -17,7 +18,7 @@ body{
     display: flex;
     justify-content: center;
     
-
+    font-family: "Inter", sans-serif;
     list-style: none;
     margin: 0px;
 }
@@ -34,6 +35,7 @@ body{
 .navbar a {
     text-decoration: none;
     color: black;
+   
 }
 
 
@@ -46,7 +48,7 @@ main{
 .principal{
     width: 50%;
 
-    margin: 45px 0px 190px 75px;
+    margin: 55px 0px 190px 115px;
 }
 
 .headerSegundario{
@@ -55,13 +57,13 @@ main{
 }
 
 h1{
-    font-size: 150px;
+    font-size: 170px;
     margin: 0;
     line-height: 0.7;
 }
 
 h2{
-    font-size: 39px;
+    font-size: 45px;
     margin: 0;
 }
 
@@ -73,9 +75,9 @@ div.pesquisa{
 
     border: 1px solid  #ccc;
     background-color:  #FFFEFE;
-    width: 400px;
+    width: 430px;
     height: 40px;
-    margin: 20px auto;
+    margin: 35px 0px 5px 20px;
     border-radius: 250px 250px 250px 250px;
     padding: 5px 10px;
     color: black; 
@@ -95,43 +97,45 @@ div.pesquisa{
     height: 30px;
     border-radius: 30px;
     background-color:#D9D9D9;
-    color: rgb(198, 0, 0);
-    font-weight: bolder;
-
-      font-variation-settings:
-  'FILL' 1,
-  'wght' 700,
-  'GRAD' 0,
-  'opsz' 48;
+    color: rgb(0, 0, 0);
 }
 
 h5{
-    font-size: 15px;
+    font-size: 23px;
+    margin: 65px 0px 15px 0px;
 }
 
 h5 a{
+    font-size: 15px;
     text-decoration: underline;
     color: #D9D9D9;
-    margin: 7px;
+    margin-left: 7px;
 }
 
 .trimestre{
     display: flex;
-  
     list-style: none;
 }
 
-.trimestre li{
-    width: 150px;
-    height: 140px;
+.todosTri{
+    width: 200px;
+    height: 200px;
     background-color:#A68877;
     margin-bottom:10px ;
     margin-right: 5px;
-    border-radius: 15px;
+    border-radius: 25px;
+    margin: 0px 5px 5px 10px;
+}
+
+.todosTrimestre02{
+    background-color: #FFFEFE;
+    width: 180px;
+    height: 130px;
+    margin: 15px 5px 5px 10px;
+    border-radius: 20px;
 }
 
 .trimestre a{
-    background-color:#D9D9D9;
     text-decoration: none;
     color: black;
     font-weight: 900;
@@ -143,7 +147,8 @@ figure{
 
 figure img{
     width: 900px;
-    height: 680px;
+    height: 700px;
+   
 }
 
 

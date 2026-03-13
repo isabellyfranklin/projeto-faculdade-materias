@@ -1,0 +1,23 @@
+
+
+body{
+    overflow: hidden;
+}
+
+
+.container{
+  display: flex;
+  height: 100vh;
+}
+
+.left{
+  width: 55%;
+  background: #8C4C35;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+.right{
+  width: 45%;
+  background: #D9CEC8;
+}
