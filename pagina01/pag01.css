@@ -1,23 +1,38 @@
-
+:root{
+  --cor-principal:#8C4C35 ;
+  --cor-de-fundo:#8C4C3550;
+}
 
 body{
-    overflow: hidden;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inria Serif", serif;
+  font-weight: lighter;
+  background-color: var(--cor-de-fundo);
+  overflow: hidden;
 }
 
-
-.container{
-  display: flex;
-  height: 100vh;
+.navbar{
+    display: flex;
+    justify-content: center;
+    
+    font-family: "Inter", sans-serif;
+    list-style: none;
+    margin: 0px;
 }
 
-.left{
-  width: 55%;
-  background: #8C4C35;
-  border-top-left-radius: 40px;
-  border-bottom-left-radius: 40px;
+.navbar li{
+  font-size: 20px;
+  font-weight: 400;
+  padding: 20px;
+  margin-top: 15px;
+  margin-left: 24px;
 }
 
-.right{
-  width: 45%;
-  background: #D9CEC8;
+.navbar a {
+text-decoration: none;
+color: black;
 }
+   
+
