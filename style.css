@@ -6,6 +6,8 @@
 :root{
     --cor-principal:#8C4C35 ;
     --cor-de-fundo:#8C4C3550;
+    --cor-trimestre:#A68877;
+    --cor-branca: #FFFEFE;
 }
 
 
@@ -17,8 +19,6 @@ body{
     font-family: "Inria Serif", serif;
     font-weight: lighter;
     background-color: var(--cor-de-fundo);
-    /*background: linear-gradient(to left, #8C4C3550 40% ,#8C4C35 40%);
-    */
     overflow: hidden;
 }
 
@@ -93,8 +93,8 @@ div.divSearch{
     justify-content: flex-start;
     align-items: center;
 
-    border: 1px solid  #ccc;
-    background-color:  #FFFEFE;
+    border: 1px solid  var(--cor-branca);
+    background-color: var(--cor-branca);
     width: 430px;
     height: 40px;
     margin: 35px 0px 5px 20px;
@@ -106,9 +106,9 @@ div.divSearch{
 #pesquisa{
     width: 100%;
     width: 100%;
-    border: 1px solid  #FFFEFE;
+    border: 1px solid var(--cor-branca);
     border-radius: 80px 80px;
-    background-color:  #FFFEFE;
+    background-color:var(--cor-branca);
     outline: none;
 }
 
@@ -140,7 +140,7 @@ h5 a{
 .todosTri{
     width: 200px;
     height: 200px;
-    background-color:#A68877;
+    background-color:var(--cor-trimestre);
     margin-bottom:10px ;
     margin-right: 5px;
     border-radius: 25px;
@@ -148,7 +148,7 @@ h5 a{
 }
 
 .todosTrimestre02{
-    background-color: #FFFEFE;
+    background-color:var(--cor-branca);
     width: 180px;
     height: 130px;
     margin: 15px 5px 5px 10px;
