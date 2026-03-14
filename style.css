@@ -87,7 +87,7 @@ h2{
     margin: 0;
 }
 
-div.pesquisa{
+div.divSearch{
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-start;
@@ -103,7 +103,7 @@ div.pesquisa{
     color: black; 
 }
 
-#ipesquisa{
+#pesquisa{
     width: 100%;
     width: 100%;
     border: 1px solid  #FFFEFE;

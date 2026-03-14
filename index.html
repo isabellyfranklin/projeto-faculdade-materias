@@ -11,7 +11,7 @@
 
     <div class="fundo-marrom"></div>
 
-    <header> </header>
+    <header> 
     <nav>
         <ul class="navbar">
             <li><a href="index.html">Inicio</a></li>
@@ -21,6 +21,7 @@
             <li><a href="">Inicio</a></li>
         </ul>
     </nav>
+    </header>
 
     <main>
 
@@ -31,11 +32,18 @@
             <h2> DESENVOLVIMENTO DE SISTEMA</h2>
         </header>
 
-        <div class="pesquisa"> 
-            <label for="ipesquisa">
+        <div class="divSearch"> 
+
+            <label for="pesquisa">
                 <span class="material-symbols-outlined">search</span>
             </label>
-            <input type="search" id="ipesquisa" placeholder="Pesquisar">
+            <input type="search" id="pesquisa" placeholder="Pesquisar">
+
+            <div class="resultado" id="resultado"> </div>
+
+        </div>
+
+
         </div>
         
 
@@ -71,6 +79,8 @@
 
 
     </main>
+
+    <script src="script.js"></script>
 
     
 </body>
