@@ -9,36 +9,131 @@
 <body>
      <header>
          <nav class="navegacao">
-            <a href="../index.html"> ← Voltar aos trimestres</a>
+            <a href="../../index.html"> ← Voltar aos trimestres</a>
         </nav>
         <h1>Como instalar um sistema operacional em máquina virtual</h1>
     </header>  
     <main>
+    <article class="resumo">
 
-        <article class="resumo">
-            <p>Os sistemas operacionais (SO) são responsáveis por gerenciar os recursos do computador, funcionando como intermediários entre o usuário e o hardware. Em ambientes empresariais, utilizam-se sistemas operacionais de rede (SOR), que permitem compartilhar recursos, controlar usuários e aumentar a segurança.</p>
-            <p>Para testar ou executar diferentes sistemas operacionais sem alterar o computador principal, utilizam-se máquinas virtuais (VMs). Uma máquina virtual é um software que simula um computador completo dentro de outro computador. O computador físico é chamado de host, enquanto o sistema instalado na máquina virtual é chamado de guest. O software responsável por gerenciar as VMs é o hipervisor.</p>
-            <p>Existem diversas plataformas de virtualização, como VirtualBox, VMware, Hyper-V e XenServer. Os hipervisores podem ser classificados em dois tipos: bare metal (tipo 1), que acessa diretamente o hardware, e hospedado (tipo 2), que funciona sobre um sistema operacional já instalado.</p>
-            <h3>Para instalar um sistema operacional em uma máquina virtual, é necessário:</h3>
+        <section>
+            <h2>1. O que é um Sistema Operacional?</h2>
+            <p>O Sistema Operacional é o software responsável por gerenciar todos os recursos do computador e servir como intermediário entre o usuário e o hardware. Sem ele, o usuário não conseguiria utilizar o computador de forma prática.</p>
+            <h3>Principais funções:</h3>
             <ul>
-                <li>Instalar um software de virtualização, como o VirtualBox.
-                <li>Baixar a imagem ISO do sistema operacional desejado.</li>
-                <li>Criar uma nova máquina virtual e definir recursos como memória RAM, processador e espaço em disco.
-                <li>Configurar a ISO como mídia de instalação.
-                <li>Iniciar a máquina virtual e seguir o assistente de instalação do sistema operacional<li>Após a instalação, configurar a rede da VM conforme a necessidade, utilizando modos como NAT, Rede Somente Host ou Rede em Ponte.
+                <li>Gerenciar memória RAM e processador</li>
+                <li>Controlar dispositivos de entrada e saída</li>
+                <li>Gerenciar arquivos e pastas</li>
+                <li>Fornecer segurança</li>
+                <li>Permitir a execução de programas</li>
             </ul>
-            <p>A virtualização permite criar ambientes seguros para testes, estudos e implementação de servidores, sem afetar o sistema operacional principal do computador.</p>
-        </article>
-
-        <section class="quiz">
-
-                <div>
-                    <h2>Teste seu conhecimento!</h2>
-                    <p>Faça o quiz para fixar o conteúdo</p>
-                </div>
-                <a href="quiz/index.html">Fazer Quiz</a>
-
         </section>
-    </main>
+
+        <section>
+            <h2>2. Componentes do SO</h2>
+            <p>O SO atua como camada entre: <strong>Usuário → Aplicações → Sistema Operacional → Hardware</strong></p>
+            <h3>GUI (Interface Gráfica)</h3>
+            <p>O usuário interage por janelas, ícones e menus. Exemplos: Windows, Ubuntu, macOS.</p>
+            <h3>Shell (Linha de Comando)</h3>
+            <p>Interface baseada em comandos digitados. Exemplos: CMD, PowerShell, Terminal Linux.</p>
+        </section>
+
+        <section>
+            <h2>3. Sistema Operacional de Rede (SOR)</h2>
+            <p>Projetado para ambientes com vários computadores em rede, normalmente instalado em um servidor. Permite compartilhamento e gerenciamento de recursos.</p>
+            <h3>Recursos do SOR:</h3>
+            <ul>
+                <li>Compartilhamento de arquivos e impressoras</li>
+                <li>Controle de usuários e permissões</li>
+                <li>Banco de dados e hospedagem de sites</li>
+                <li>Segurança e armazenamento centralizados</li>
+                <li>Gerenciamento de discos (RAID)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Classificação dos Sistemas Operacionais</h2>
+            <h3>Sistemas Livres</h3>
+            <p>Código-fonte aberto, geralmente gratuitos e personalizáveis. Exemplos: Linux, Ubuntu, FreeBSD.</p>
+            <h3>Sistemas Proprietários</h3>
+            <p>Exigem licença de uso, código fechado, suporte oficial e maior compatibilidade. Exemplo: Windows Server 2019.</p>
+        </section>
+
+        <section>
+            <h2>5. Windows Server 2019</h2>
+            <p>Principal SOR da Microsoft. Possui quatro versões:</p>
+            <ul>
+                <li><strong>Essentials:</strong> pequenas empresas, até 25 usuários, sem virtualização</li>
+                <li><strong>Standard:</strong> médio porte, virtualização limitada</li>
+                <li><strong>Datacenter:</strong> grandes empresas, virtualização ilimitada</li>
+                <li><strong>Hyper-V Server:</strong> focado exclusivamente em virtualização</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Máquina Virtual (VM)</h2>
+            <p>Software que simula um computador completo dentro de outro, com SO, memória, processador, disco e rede virtualizados. Permite testar sistemas sem modificar o computador principal.</p>
+            <h3>Conceitos importantes:</h3>
+            <ul>
+                <li><strong>Host:</strong> o computador físico</li>
+                <li><strong>Guest:</strong> o SO instalado dentro da VM</li>
+                <li><strong>Hipervisor:</strong> software que cria e gerencia as VMs</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>7. Tipos de Hipervisor</h2>
+            <h3>Tipo 1 — Bare Metal</h3>
+            <p>Funciona direto no hardware. Mais rápido e eficiente. Usado em servidores e data centers.</p>
+            <p>Estrutura: <strong>Hardware → Hipervisor → VM</strong></p>
+            <h3>Tipo 2 — Hospedado</h3>
+            <p>Funciona sobre um SO já instalado. Fácil de instalar, ideal para estudos, porém com menor desempenho.</p>
+            <p>Estrutura: <strong>Hardware → SO → Hipervisor → VM</strong></p>
+            <p>Exemplo: Windows → VirtualBox → Windows Server</p>
+        </section>
+
+        <section>
+            <h2>8. Como instalar um SO em uma VM</h2>
+            <ol>
+                <li>Instalar o software de virtualização (ex: VirtualBox)</li>
+                <li>Baixar a imagem ISO do sistema operacional</li>
+                <li>Criar a VM definindo nome, RAM, processador e disco</li>
+                <li>Selecionar a ISO como mídia de instalação</li>
+                <li>Ligar a VM e seguir o assistente de instalação</li>
+                <li>Configurar a rede da VM</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>9. Modos de Rede da VM</h2>
+            <ul>
+                <li><strong>NAT:</strong> acessa internet, comunica com o host, não visível na rede externa</li>
+                <li><strong>Rede Somente Host:</strong> sem internet, comunica com host e outras VMs, ideal para laboratórios</li>
+                <li><strong>Rede em Ponte (Bridge):</strong> acessa internet, visível para toda a rede, simula um computador real</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>10. Vantagens da Virtualização</h2>
+            <ul>
+                <li>Testar sistemas sem afetar o computador principal</li>
+                <li>Criar laboratórios de estudo</li>
+                <li>Simular redes empresariais</li>
+                <li>Executar vários SOs no mesmo computador</li>
+                <li>Economizar hardware</li>
+                <li>Facilitar backups e recuperação</li>
+            </ul>
+        </section>
+
+    </article>
+
+    <section class="quiz">
+        <div>
+            <h2>Teste seu conhecimento!</h2>
+            <p>Faça o quiz para fixar o conteúdo</p>
+        </div>
+        <a href="quiz/index.html">Fazer Quiz</a>
+    </section>
+</main>
 </body>
 </html>

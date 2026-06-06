@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Quiz App</title>
+    <title>Quiz</title>
 </head>
 <body>
-    <div class="app">
-        <h1>Simple quiz</h1>
-        <hr>
 
-        <div class="quiz">
-
-            <h2 id="question">Question goes here</h2>
-
-            <div id="answer-button">
-                <button class="btn">Answer 01</button>
-                <button class="btn">Answer 02</button>
-                <button class="btn">Answer 03</button>
-                <button class="btn">Answer 04</button>
-            </div>
-            <button id="next-btn">Next</button>
-
-        </div>
+<header>
+    <div class="header-top">
+        <a href="../aula01.html" class="btn-voltar">← Voltar ao Resumo</a>
+        <span class="tag-materia">Programação</span>
     </div>
-    <script src="script.js"></script>
+    <h1>Como instalar um sistema operacional em máquina virtual</h1>
+    <div class="progresso-container">
+        <div class="barra-fundo">
+            <div class="barra-preenchida" id="barra"></div>
+        </div>
+        <span class="progresso-texto" id="progresso-texto">1 / 3</span>
+    </div>
+</header>
+
+<main>
+    <div class="quiz-card">
+        <p class="pergunta-label" id="pergunta-label">Pergunta 1</p>
+        <p class="pergunta-texto" id="question"></p>
+        <div id="answer-button"></div>
+        <button id="next-btn">Próxima →</button>
+    </div>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>

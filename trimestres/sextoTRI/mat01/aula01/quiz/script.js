@@ -41,9 +41,20 @@ const questions = [
 const questionElement = document.querySelector("#question");
 const answerButtons = document.querySelector("#answer-button");
 const nextButton = document.querySelector("#next-btn");
+const barra = document.querySelector("#barra");
+const progressoTexto = document.querySelector("#progresso-texto");
+const perguntaLabel = document.querySelector("#pergunta-label");
 
 let currentQuestionIndex = 0;
 let score = 0;
+
+function atualizarProgresso() {
+    const total = questions.length;
+    const atual = currentQuestionIndex + 1;
+    barra.style.width = (atual / total * 100) + "%";
+    progressoTexto.textContent = atual + " / " + total;
+    perguntaLabel.textContent = "Pergunta " + atual;
+}
 
 function startQuiz(){
     currentQuestionIndex = 0;
@@ -53,9 +64,10 @@ function startQuiz(){
 }
 
 function showQuestion(){
+    atualizarProgresso(); 
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
+    let questionNo = currentQuestionIndex + 1 + " Pergunta";
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
@@ -63,12 +75,13 @@ function showQuestion(){
         button.innerHTML = answer.text;
         button.classList.add("btn");
         if(answer.correct){
-            button.dataset.correct = answer.correct; // marca o botão certo
+            button.dataset.correct = answer.correct;
         }
-        button.addEventListener("click", selectAnswer); // detecta o clique
+        button.addEventListener("click", selectAnswer);
         answerButtons.appendChild(button);
     });
 }
+
 
 function resetState(){
     nextButton.style.display = "none";
@@ -82,10 +95,10 @@ function selectAnswer(e){
     const isCorrect = selectedBtn.dataset.correct === "true";
 
     if(isCorrect){
-        selectedBtn.classList.add("correct"); // fica verde
+        selectedBtn.classList.add("correct"); 
         score++;
     } else {
-        selectedBtn.classList.add("wrong"); // fica vermelho
+        selectedBtn.classList.add("wrong"); 
     }
 
     // mostra a resposta certa e bloqueia os outros botões
@@ -93,7 +106,7 @@ function selectAnswer(e){
         if(button.dataset.correct === "true"){
             button.classList.add("correct");
         }
-        button.disabled = true; // impede clicar de novo
+        button.disabled = true; 
     });
 
     nextButton.style.display = "block";
@@ -101,7 +114,10 @@ function selectAnswer(e){
 
 function showScore(){
     resetState();
-    questionElement.innerHTML = `Você acertou ${score} de ${questions.length} perguntas!`;
+    perguntaLabel.textContent = "Resultado";
+    questionElement.innerHTML = `Você acertou ${score} de ${questions.length} perguntas! Parabens`;
+    barra.style.width = "100%";
+    progressoTexto.textContent = questions.length + " / " + questions.length;
     nextButton.innerHTML = "Jogar de novo";
     nextButton.style.display = "block";
 }
@@ -119,7 +135,7 @@ nextButton.addEventListener("click", () => {
     if(currentQuestionIndex < questions.length){
         handleNextButton();
     } else {
-        startQuiz(); // reinicia ao clicar em "jogar de novo"
+        startQuiz(); 
     }
 });
 
