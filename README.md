@@ -2,7 +2,7 @@
 Olá, me chamo Isabelly  e eu fiz esse site para me ajudar a estudar as materias da faculdade e me ajudar a revisar elas. 
 
 
-## Link do site: 
+## Link do site: https://isabellyfranklin.github.io/projeto-faculdade-materias/
 ### Previw do site :
 <img width="1173" height="744" alt="image" src="https://github.com/user-attachments/assets/e9d366e5-efb1-4c77-b906-25419d124304" />
 <img width="1165" height="742" alt="image" src="https://github.com/user-attachments/assets/b92841cd-b38f-412f-8bfe-0a53ce5039f8" />
