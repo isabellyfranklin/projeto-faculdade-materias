@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --cor-principal:#8C4C35 ;
+    --cor-trimestre:#A68877;
+    --cor-branca: #FFFEFE;
+    --cor-de-fundo:rgb(241, 235, 226);
+    --cor-branca-cizentado:#d1d1d1
+    --cor-cinza-escuro: gray;
+    --cor-preta:#000000;
+
+    --cor-branca-letras:rgb(241, 235, 226);
+    --cor-preta-letras:#000000;
+    --cor-cinza-letras:gray;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color:#1a1a1a;
+}
+
+header{ 
+    width: 100%;
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    padding: 25px;
+}
+
+.navegacao{
+    width: 100%;
+    height: 30px; 
+    margin-top: -0;
+}
+
+.navegacao a{
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #dfdfdf;
+    color: var(--cor-preta-letras);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.7s ease;
+}
+
+.navegacao a:hover{
+    background-color: var(--cor-principal);
+    color: var(--cor-branca-letras);
+}
+
+header h1{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.resumo{
+    background-color: rgb(60, 59, 59);
+    width: 75%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(125, 125, 125);
+}
+
+.resumo p{
+    color: var(--cor-branca-letras);
+    text-align: justify;
+    padding: 5px;
+}
+
+.resumo h3{
+    padding: 5px;
+    color: white;
+}
+
+.resumo li{
+    color: white;
+    padding: 5px;
+    margin-left: 25px;
+}
+
+@media screen and (max-width: 640px){
+   .resumo p{
+    color: var(--cor-branca-letras);
+    font-size: 13px;
+    text-align: justify;
+    padding: 5px;
+   }
+
+   .resumo h3{
+    font-size: 13px;
+    padding: 5px;
+    color: white;
+}
+
+.resumo li{
+    color: white;
+    font-size: 13px;
+    padding: 5px;
+    margin-left: 25px;
+}
+}

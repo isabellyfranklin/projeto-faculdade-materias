@@ -3,83 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bem-vindo</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200&icon_names=favorite,home,search,settings" rel="stylesheet" />
+    <title>Bem-vindo</title>
 </head>
 <body>
 
-    <div class="fundo-marrom"></div>
-
-    <header> 
-    <nav>
-        <ul class="navbar">
-            <li><a href="index.html" target="_self">Inicio</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="pagMaterias/pag01.html" target="_self">Materias</a></li>
-            <li><a href="#">Exercícios</a></li>
-        </ul>
-    </nav>
-    </header>
+    <header>
+        <h1>Meus Resumos da Faculdade</h1>
+        <p>Organize seus estudos por trimestre</p>
+    </header>  
 
     <main>
-
-        <section class="principal">
-
-        <header class="headerSegundario">
-            <h1>ANALISE</h1>
-            <h2> DESENVOLVIMENTO DE SISTEMA</h2>
-        </header>
-
-        <div class="divSearch"> 
-
-            <label for="pesquisa">
-                <span class="material-symbols-outlined">search</span>
-            </label>
-            <input type="search" id="pesquisa" placeholder="Pesquisar">
-            
-            <div class="resultado" id="resultado"> </div>
-
+        <div class="titulo-principal">
+            <h2>Trimestres</h2>
+            <p>Selecione um trimestre para ver as matérias e aulas</p>
         </div>
 
+        <!--TRIMESTRES MAIS RECENTES-->
+        <section class="recentes" >
 
-        
+            <h2>Recentes:</h2>
 
-        <h5>Trimestre : <a href="pagMaterias/pag01.html" target="_self"> todos </a></h5>
-        <div  class="trimestre">
+            <div id="recentes">
 
-            <div class="todosTri">
-                <a href="#">
-                    <div class="todosTrimestre02"></div>
-                </a>
+
             </div>
-
-            <div class="todosTri">
-                <a href="#">
-                    <div class="todosTrimestre02"></div>
-                </a>      
-            </div>
-
-            <div class="todosTri">
-                <a href="terceiroTRI/inicio.html">
-                    <div class="todosTrimestre02"></div>
-                </a>
-            </div>
-
-        </div>
-
 
         </section>
 
-        <figure>
-            <img src="img/Capturar.png" alt="imagemcomeço">
-        </figure>
+        <section class="trimestres">
 
+            <!--PRIMEIRO TRIMESTRE-->
+            <a href="#" class="card">
+                <article>
+                    <img src="" alt="">
 
+                    <div class="card-topo">
+                        <div class="card-icone"><img src="img/calendar_today_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></div>
+                        <span class="card-materias">0 matérias</span>
+                    </div>
+
+                    <h3>1° Trimestre</h3>
+                    <p>Janeiro - Março 2025</p>
+
+                    <div class="aviso">
+                        <p>Nenhuma matéria cadastrada ainda.</p>
+                    </div>
+    
+                    <div class="materias">
+
+                        
+                    </div>
+
+                    
+                </article>
+            </a>
+            
+            <!--SEGUNDO TRIMESTRE-->
+            <a href="#" class="card">
+                <article>
+                    <img src="" alt="">
+
+                    <div class="card-topo">
+                        <div class="card-icone"><img src="img/calendar_today_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></div>
+                        <span class="card-materias">2 matérias</span>
+                    </div>
+
+                    <h3>2° Trimestre</h3>
+                    <p>Abril - Junho 2025</p>
+    
+                    <div class="materias">
+                        <ul>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Algoritmos e Programação I</span>
+                                <span class="aulas">8 Aulas</span>
+                            </li>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Infraestrutura de Tecnologia da Informação</span>
+                                <span class="aulas">5 Aulas</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <hr>
+                    <p class="paragrafo-total">Total <span class="total">13</span>aulas</p>
+                </article>
+            </a>
+
+            <!--TERCEIRO TRIMESTRE-->
+            <a href="#" class="card">
+                <article>
+                    <img src="" alt="">
+
+                    <div class="card-topo">
+                        <div class="card-icone"><img src="img/calendar_today_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></div>
+                        <span class="card-materias">2 matérias</span>
+                    </div>
+
+                    <h3>3° Trimestre</h3>
+                    <p>Julho - Setembro 2025</p>
+    
+                    <div class="materias">
+                        <ul>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Algoritmos e Programação II</span>
+                                <span class="aulas">8 Aulas</span>
+                            </li>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Conceitos da Computação II</span>
+                                <span class="aulas">8 Aulas</span>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                    <hr>
+                    <p class="paragrafo-total">Total <span class="total">16</span></p>
+                </article>
+            </a>
+
+            <!--QUARTO TRIMESTRE-->
+            <a href="#" class="card">
+                <article>
+                    <img src="" alt="">
+
+                    <div class="card-topo">
+                        <div class="card-icone"><img src="img/calendar_today_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></div>
+                        <span class="card-materias">3 matérias</span>
+                    </div>
+
+                    <h3>4° Trimestre</h3>
+                    <p>Outubro - Dezembro 2025</p>
+    
+                    <div class="materias">
+                        <ul>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Análise de Sistemas</span>
+                                <span class="aulas">16 Aulas</span>
+                            </li>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Banco de Dados</span>
+                                <span class="aulas">8 Aulas</span>
+                            </li>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Ética, Cidadania e <br>Sustentabilidade</span>
+                                <span class="aulas">8 Aulas</span>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                    <hr>
+                    <p class="paragrafo-total">Total <span class="total">32</span></p>
+                </article>
+            </a>
+
+            <!--QUINTO TRIMESTRE-->
+            <a href="quintoTRI/index.html" class="card" data-recente>
+                <article>
+
+                    <div class="card-topo">
+                        <div class="card-icone"><img src="img/calendar_today_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></div>
+                        <span class="card-materias">2 matérias</span>
+                    </div>
+
+                    <h3>5° Trimestre</h3>
+                    <p>Janeiro – Março 2026</p>
+    
+                    <div class="materias">
+                        <ul>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Engenharia de Software </span>
+                                <span class="aulas">16 Aulas</span>
+                            </li>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Programação Orientada <br>a Objetos</span>
+                                <span class="aulas">8 Aulas</span>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                    <hr>
+                    <p class="paragrafo-total">Total: <span class="total">24</span>aulas</p>
+                </article>
+            </a>
+
+            <!--SEXTO TRIMESTRE-->
+            <a href="trimestres/sextoTRI/index.html" class="card" data-recente>
+                <article>
+
+                    <div class="card-topo">
+                        <div class="card-icone"><img src="img/calendar_today_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt=""></div>
+                        <span class="card-materias">3 matérias</span>
+                    </div>
+
+                    <h3>6° Trimestre</h3>
+                    <p>Abril – Junho 2026</p>
+    
+                    <div class="materias">
+                        <ul>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Sistema Operacional I </span>
+                                <span class="aulas">8 Aulas</span>
+                            </li>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Estrutura de Dados</span>
+                                <span class="aulas">8 Aulas</span>
+                            </li>
+                            <li>
+                                <span class="bolinha"></span>
+                                <span>Empreendedorismo, Inovação e Economia Criativa </span>
+                                <span class="aulas">8 Aulas</span>
+                            </li>
+                        </ul>
+                        
+                    </div>
+
+                    <hr>
+                    <p class="paragrafo-total">Total: <span class="total">24</span>aulas</p>
+                </article>
+            </a>
+            
+        </section>
+        
     </main>
 
     <script src="script.js"></script>
-
-    
 </body>
 </html>
