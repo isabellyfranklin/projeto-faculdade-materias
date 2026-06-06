@@ -120,7 +120,7 @@ function showQuestion(){
     atualizarProgresso(); 
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1 + " Pergunta";
+    let questionNo = currentQuestionIndex + 1 ;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
