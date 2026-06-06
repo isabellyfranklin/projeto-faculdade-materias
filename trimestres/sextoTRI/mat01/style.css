@@ -93,6 +93,39 @@ main{
     margin-left: 25px;
 }
 
+.quiz{
+    width:75%;
+    height: 100px;
+    background-color: rgb(60, 59, 59);
+    border: 2px solid #8C4C35;
+    border-radius: 15px;
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.quiz h2{
+    font-size: 25px;
+    color: var(--cor-branca-letras);
+}
+
+.quiz p{
+    font-size: 15px;
+    color: var(--cor-cinza-letras);
+}
+
+.quiz a{
+    background-color: var(--cor-principal);
+    padding: 10px 40px 10px 40px;
+    border-radius: 15px;
+    color: var(--cor-branca-letras);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 640px){
    .resumo p{
     color: var(--cor-branca-letras);

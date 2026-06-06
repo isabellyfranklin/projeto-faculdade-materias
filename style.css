@@ -80,11 +80,11 @@ header p{
 
 .recentes #recentes{
     width: 100%;
+    margin: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 6rem;
+    justify-content: center;
 }
 
 .trimestres{
