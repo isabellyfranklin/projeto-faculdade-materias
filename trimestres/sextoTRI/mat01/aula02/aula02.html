@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../aula02/style.css">
+    <title>Aula 02</title>
+</head>
+<body>
+    <main>
+        <header>
+          <nav class="navegacao">
+            <a href="../../index.html"> ← Voltar aos trimestres</a>
+            </nav>
+            <h1>Como adicionar serviços no Server 2019 e implementar servidor em Shell</h1>
+        </header>  
+   
+
+        <article class="resumo">
+
+            <section>
+                <h2>1. Introdução à Segurança de Redes</h2>
+                <p>A segurança da informação é um dos aspectos mais importantes dentro de uma empresa. Apenas instalar um firewall não é suficiente — toda a infraestrutura de TI precisa funcionar corretamente, incluindo:</p>
+                <ul>
+                    <li>Redes de computadores</li>
+                    <li>Servidores</li>
+                    <li>DNS (Sistema de Nomes de Domínio)</li>
+                    <li>Switches e Roteadores</li>
+                    <li>Sistemas Operacionais</li>
+                </ul>
+                <p>Para melhorar a segurança, utiliza-se uma rede baseada em domínio, onde apenas usuários autorizados acessam determinados recursos.</p>
+                <img src="../../img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 figura Alguns serviços do AD.webp" alt="figura 1 Alguns serviços do AD">
+            </section>
+
+            <section>
+                <h2>2. O que é o Active Directory Domain Services (ADDS)?</h2>
+                <p>O ADDS é um serviço do Windows Server que funciona como um banco de dados centralizado, armazenando e organizando informações sobre todos os recursos da rede:</p>
+                <ul>
+                    <li>Usuários;
+                    <li>Impressoras;
+                    <li>Computadores;
+                    <li>>Pastas compartilhadas;
+                    <li>Servidores;
+                    <li>Grupos de usuários.
+                </ul>
+                <h3>Exemplo prático</h3>
+                <p>Em uma rede doméstica, instalar uma impressora exige configurar computador por computador. Com o Active Directory, o administrador configura apenas uma vez e a impressora é instalada automaticamente para todos os usuários autorizados.</p>
+            </section>
+
+            <section>
+                <h2>3. Autenticação e Domínio</h2>
+                <p>Quando um usuário entra na rede, passa pelo processo de autenticação (logon). O Active Directory é responsável por verificar usuário e senha, confirmar permissões e liberar acesso apenas aos recursos autorizados.</p>
+                <p>O <strong>Domínio</strong> é o limite administrativo e de segurança da rede. Após o login, o usuário acessa somente o que o administrador definiu.</p>
+            </section>
+
+            <section>
+                <h2>4. Instalação do ADDS</h2>
+                <ol>
+                    <li>Abrir o Gerenciador do Servidor e clicar em "Adicionar funções e recursos"</li>
+                    <img src="../../../sextoTRI/img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto01.webp " >
+
+                    <li>Selecionar "Instalação baseada em função ou recurso"</li>
+                    <img src="../../../sextoTRI/img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto02.webp" >
+
+                    <li>Escolher o servidor <strong>DC-01</strong></li>
+                    <img src="../../../sextoTRI/img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto03.webp" >
+
+                    <li>Marcar <strong>Active Directory Domain Services</strong> e clicar em "Adicionar Recursos"</li>
+                    <img src="../../../sextoTRI/img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto04.webp" >
+
+                    <li>Marcar <strong>DNS Server</strong> (necessário para localizar recursos do domínio)</li>
+                    <img src="../../../sextoTRI/img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto05.webp" >
+
+                    <li>Marcar "Reiniciar automaticamente se necessário" e clicar em <strong>Instalar</strong></li>
+                    <img src="../../../sextoTRI/img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto06.webp" >
+                </ol>
+            </section>
+
+            <section>
+                <h2>5. Promovendo o Servidor para Controlador de Domínio</h2>
+                <p>Após instalar o ADDS, o servidor precisa ser promovido. No Gerenciador do Servidor, clique na bandeira de notificação e selecione a opção para promover o servidor. Em seguida:</p>
+                <img src="../../img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto10.webp" >
+                <ul>
+
+                    <li>Selecionar <strong>"Adicionar uma nova floresta"</strong></li>
+                    <li>Definir o domínio: <strong>Senac.local</strong> (deve começar com letra e conter um ponto)</li>
+                    <img src="../../img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto11.webp">
+                   
+
+                    <li>Definir nível funcional: <strong>Windows Server 2019</strong></li>
+                    <li>Também será necessário criar uma senha para o domínio.</li>
+                    <img src="../../img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto12.webp">
+                
+                    <li>Configurações DNS
+                    <li>>Durante a instalação pode surgir uma mensagem de aviso relacionada ao DNS.
+                    <li>>Isso é normal e não impede a continuidade da instalação.
+                    <img src="../../img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto13.webp" alt="">
+
+                    <li>Nome NetBIOS
+                    <li>>Definir:
+                    <li>SENAC
+                    <li>>Esse nome será usado em várias operações internas do domínio.</li>
+                    <img src="../../img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto14.webp" alt="">
+
+                    <li>Caminhos dos Arquivos: O sistema exibirá onde serão armazenados: Banco de dados do AD; Logs; Arquivos SYSVOL. Normalmente mantém-se os caminhos padrão.
+                    <img src="../../img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto15.webp" alt="">
+
+                    <li><strong>Finalização da Instalação</strong> O sistema executará verificações de pré-requisitos.</li>
+                    <li>Se tudo estiver correto: Clique em Instalar, Ao final, o servidor se tornará o Controlador de Domínio da rede.</li>
+                    <img src="../../img-sexto-trimestre/materia-01/sistema-operacional-I/aula-02 instalacao-foto16.webp" alt="">
+                </ul>
+            </section>
+
+            <section>
+                <h2>6. Domínio x Work,group</h2>
+                <h3>Workgroup (Grupo de Trabalho)</h3>
+                <p>Usado em residências ou pequenas redes. Administração individual, pouca segurança, cada computador possui usuários próprios e configurações feitas máquina por máquina.</p>
+                <h3>Domínio</h3>
+                <p>Usado em empresas. Administração centralizada, maior segurança, controle de acesso, políticas de grupo e gerenciamento de centenas ou milhares de computadores.</p>
+            </section>
+
+            <section>
+                <h2>7. Inserindo um Cliente no Domínio</h2>
+                <p>Após criar o domínio, adicione os computadores clientes seguindo os passos:</p>
+                <ol>
+                    <li>Pressionar <strong>Windows + R</strong> e digitar <strong>sysdm.cpl</strong></li>
+                    <li>Acessar <strong>Nome do Computador → Alterar</strong></li>
+                    <li>Selecionar <strong>Domínio</strong> e digitar <strong>Senac.local</strong></li>
+                    <li>Informar usuário <strong>Administrador</strong> e senha <strong>Senac@123</strong></li>
+                    <li>Reiniciar o computador</li>
+                </ol>
+                <p>Após isso, o cliente passará a receber políticas de segurança e poderá acessar os recursos centralizados do servidor AD.</p>
+            </section>
+
+            <section>
+                <h2>8. Resumo para Prova</h2>
+                <ul>
+                    <li><strong>ADDS:</strong> gerencia usuários, computadores e recursos da rede</li>
+                    <li><strong>Active Directory:</strong> banco de dados centralizado da rede</li>
+                    <li><strong>Domínio:</strong> limite administrativo e de segurança</li>
+                    <li><strong>DNS:</strong> localiza recursos dentro da rede</li>
+                    <li><strong>Controlador de Domínio:</strong> servidor que gerencia autenticação e permissões</li>
+                    <li><strong>Workgroup:</strong> rede simples e descentralizada</li>
+                    <li><strong>Para ingressar no domínio:</strong> sysdm.cpl</li>
+                    <li><strong>Exemplo de domínio:</strong> Senac.local</li>
+                    <li><strong>Exemplo de NetBIOS:</strong> SENAC</li>
+                </ul>
+            </section>
+
+        </article>
+
+
+         <section class="quiz">
+        <div>
+            <h2>Teste seu conhecimento!</h2>
+            <p>Faça o quiz para fixar o conteúdo</p>
+        </div>
+        <a href="quiz/index.html">Fazer Quiz</a>
+    </section>
+    </main>
+</body>
+</html>
