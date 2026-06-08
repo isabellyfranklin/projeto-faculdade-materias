@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Bem-vindo</title>
 </head>
 <body>
 
+    <!--HEADER-->
     <header>
         <h1>Meus Resumos da Faculdade</h1>
         <p>Organize seus estudos por trimestre</p>
     </header>  
-
+    <!--CONTEUDO PRINCIPAL-->
     <main>
         <div class="titulo-principal">
             <h2>Trimestres</h2>
@@ -23,18 +25,16 @@
         <section class="recentes" >
 
             <h2>Recentes:</h2>
-
             <div id="recentes">
 
 
             </div>
-
         </section>
-
+        <!--TODOS OS TRIMESTRES-->
         <section class="trimestres">
 
             <!--PRIMEIRO TRIMESTRE-->
-            <a href="#" class="card">
+            <a href="#" class="card indisponivel"  >
                 <article>
                     <img src="" alt="">
 
@@ -60,7 +60,7 @@
             </a>
             
             <!--SEGUNDO TRIMESTRE-->
-            <a href="#" class="card">
+            <a href="#" class="card indisponivel"  >
                 <article>
                     <img src="" alt="">
 
@@ -93,7 +93,7 @@
             </a>
 
             <!--TERCEIRO TRIMESTRE-->
-            <a href="#" class="card">
+            <a href="#" class="card indisponivel" >
                 <article>
                     <img src="" alt="">
 
@@ -127,7 +127,7 @@
             </a>
 
             <!--QUARTO TRIMESTRE-->
-            <a href="#" class="card">
+            <a href="#" class="card indisponivel" >
                 <article>
                     <img src="" alt="">
 
@@ -166,7 +166,7 @@
             </a>
 
             <!--QUINTO TRIMESTRE-->
-            <a href="quintoTRI/index.html" class="card" data-recente>
+            <a href="quintoTRI/index.html" class="card indisponivel"  data-recente>
                 <article>
 
                     <div class="card-topo">
@@ -240,6 +240,19 @@
         
     </main>
 
+    <!--MODAL DE AVISO-->
+    <div class="modal-overlay" id="modal-aviso" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:999; align-items:center; justify-content:center;">
+        <div class="modal-box">
+        <div class="modal-icone">
+            <img src="img/alert-icon.svg" alt="">
+      </div>
+      <h3>Conteúdo indisponível</h3>
+      <p>O site está passando por ajustes.No momento, apenas o <a href="trimestres/sextoTRI/index.html">6° Trimestre</a> está disponível.</p>
+      <p>Obrigada por acessa meu site!</p>
+    
+      <button id="modal-fechar">Entendi</button>
+    </div>
+  </div>
     <script src="script.js"></script>
 </body>
 </html>

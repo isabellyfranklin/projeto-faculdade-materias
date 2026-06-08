@@ -209,3 +209,47 @@ header p{
 .card .total{
     margin-right: 5px;
 }
+
+
+/*MODAL de aviso*/
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: var(--cor-de-fundo);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 340px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal-box h3 {
+  color: var(--cor-principal);
+  margin-bottom: 0.5rem;
+}
+
+.modal-box p {
+  color: #6b4030;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.modal-box button {
+  background: var(--cor-principal);
+  color: var(--cor-de-fundo);
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  font-size: 14px;
+  cursor: pointer;
+}

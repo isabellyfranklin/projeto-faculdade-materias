@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Active Directory – Resumo</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navegacao">
+            <a href="../../../../index.html">← Voltar aos trimestres</a>
+        </nav>
+        <h1>Active Directory (AD)</h1>
+    </header>
+
+    <main>
+
+        <article class="resumo">
+
+            <section>
+                <p>O Active Directory (AD) é um serviço de diretório desenvolvido pela Microsoft para administrar e organizar recursos de uma rede corporativa. Ele funciona como um banco de dados centralizado que armazena informações sobre usuários, computadores, impressoras, servidores e outros dispositivos conectados à rede.</p>
+                <p>Seu principal objetivo é facilitar o gerenciamento da infraestrutura de TI, aumentar a segurança e permitir que administradores controlem todos os recursos da rede a partir de um único local.</p>
+            </section>
+
+            <section>
+                <h2>1. Gerenciamento de Usuários</h2>
+                <p>O Active Directory permite criar, modificar, bloquear e excluir contas de usuários. Com ele, o administrador pode:</p>
+                <ul>
+                    <li>Criar contas para novos funcionários</li>
+                    <li>Alterar informações de usuários</li>
+                    <li>Redefinir senhas</li>
+                    <li>Bloquear contas quando necessário</li>
+                    <li>Excluir contas de funcionários desligados da empresa</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>Quando uma pessoa é contratada, o setor de TI cria uma conta no AD. A partir desse momento, ela pode acessar os sistemas autorizados usando apenas um usuário e uma senha.</p>
+            </section>
+
+            <section>
+                <h2>2. Autenticação de Usuários</h2>
+                <p>Uma das funções mais importantes do AD é verificar a identidade dos usuários. Quando alguém faz login:</p>
+                <ol>
+                    <li>Digita usuário e senha</li>
+                    <li>O Active Directory verifica se os dados estão corretos</li>
+                    <li>Se forem válidos, o acesso é liberado</li>
+                    <li>Se estiverem incorretos, o acesso é negado</li>
+                </ol>
+                <p>Esse processo aumenta a segurança da rede.</p>
+            </section>
+
+            <section>
+                <h2>3. Controle de Permissões</h2>
+                <p>Nem todos os funcionários precisam acessar os mesmos recursos. O Active Directory permite definir:</p>
+                <ul>
+                    <li>Quem pode acessar arquivos</li>
+                    <li>Quem pode utilizar impressoras</li>
+                    <li>Quem pode acessar sistemas específicos</li>
+                    <li>Quem possui privilégios administrativos</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <ul>
+                    <li>RH acessa documentos de funcionários</li>
+                    <li>Financeiro acessa dados financeiros</li>
+                    <li>Outros setores não possuem essas permissões</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Gerenciamento de Grupos</h2>
+                <p>Em vez de configurar permissões para cada usuário individualmente, o administrador pode criar grupos.</p>
+                <h3>Exemplo – Grupo RH:</h3>
+                <ul>
+                    <li>Ana</li>
+                    <li>Carlos</li>
+                    <li>Pedro</li>
+                </ul>
+                <p>Ao conceder uma permissão ao grupo RH, todos os membros recebem automaticamente essa permissão. Isso economiza tempo e reduz erros.</p>
+            </section>
+
+            <section>
+                <h2>5. Políticas de Grupo (GPO)</h2>
+                <p>As <abbr title="Group Policy Objects">GPOs</abbr> permitem configurar computadores e usuários automaticamente. Com elas é possível:</p>
+                <ul>
+                    <li>Definir papel de parede corporativo</li>
+                    <li>Bloquear acesso ao Painel de Controle</li>
+                    <li>Exigir senhas fortes</li>
+                    <li>Instalar programas automaticamente</li>
+                    <li>Configurar impressoras</li>
+                    <li>Restringir o uso de dispositivos USB</li>
+                </ul>
+                <h3>Benefício:</h3>
+                <p>O administrador configura uma única vez e a regra é aplicada a todos os computadores desejados.</p>
+            </section>
+
+            <section>
+                <h2>6. Gerenciamento de Computadores</h2>
+                <p>O Active Directory também controla os computadores da rede. É possível:</p>
+                <ul>
+                    <li>Adicionar computadores ao domínio</li>
+                    <li>Organizar máquinas por departamentos</li>
+                    <li>Aplicar configurações automaticamente</li>
+                    <li>Monitorar equipamentos conectados</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>Quando um computador novo é instalado, ele entra no domínio da empresa e recebe automaticamente as configurações definidas pelo administrador.</p>
+            </section>
+
+            <section>
+                <h2>7. Organização da Rede</h2>
+                <p>O AD organiza os recursos utilizando estruturas hierárquicas.</p>
+                <h3>Objetos</h3>
+                <p>São os elementos armazenados no diretório:</p>
+                <ul>
+                    <li>Usuários</li>
+                    <li>Computadores</li>
+                    <li>Impressoras</li>
+                    <li>Grupos</li>
+                </ul>
+                <h3>Unidades Organizacionais (OUs)</h3>
+                <p>Servem para organizar os objetos.</p>
+                <h3>Exemplo:</h3>
+                <ul>
+                    <li>Empresa
+                        <ul>
+                            <li>RH</li>
+                            <li>Financeiro</li>
+                            <li>TI</li>
+                            <li>Marketing</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>Cada setor pode ter suas próprias regras e permissões.</p>
+            </section>
+
+            <section>
+                <h2>8. Compartilhamento de Recursos</h2>
+                <p>O Active Directory facilita o compartilhamento de:</p>
+                <ul>
+                    <li>Pastas</li>
+                    <li>Arquivos</li>
+                    <li>Impressoras</li>
+                    <li>Aplicações</li>
+                </ul>
+                <p>Tudo pode ser controlado por permissões para garantir segurança.</p>
+            </section>
+
+            <section>
+                <h2>9. Segurança</h2>
+                <p>O AD contribui para a segurança da empresa através de:</p>
+                <ul>
+                    <li>Controle de acesso</li>
+                    <li>Autenticação centralizada</li>
+                    <li>Políticas de senha</li>
+                    <li>Auditoria de atividades</li>
+                    <li>Restrição de recursos</li>
+                </ul>
+                <p>Isso ajuda a proteger informações importantes contra acessos não autorizados.</p>
+            </section>
+
+            <section>
+                <h2>10. Domínio</h2>
+                <p>O domínio é o conjunto de computadores, usuários e recursos gerenciados pelo Active Directory.</p>
+                <h3>Exemplo – empresa.local:</h3>
+                <ul>
+                    <li>Usuários</li>
+                    <li>Computadores</li>
+                    <li>Impressoras</li>
+                    <li>Servidores</li>
+                </ul>
+                <p>Todos são administrados de forma centralizada.</p>
+            </section>
+
+            <section>
+                <h2>Resumo Final</h2>
+                <p>O Active Directory é uma ferramenta da Microsoft que centraliza o gerenciamento de usuários, computadores e recursos de uma rede. Suas principais funções são:</p>
+                <ul>
+                    <li>Autenticar usuários</li>
+                    <li>Controlar permissões de acesso</li>
+                    <li>Gerenciar grupos e computadores</li>
+                    <li>Aplicar políticas de segurança (GPO)</li>
+                    <li>Compartilhar recursos da rede</li>
+                    <li>Organizar departamentos e setores</li>
+                    <li>Aumentar a segurança e facilitar a administração da empresa</li>
+                </ul>
+                <p>Em uma frase: o Active Directory funciona como o "centro de controle" de uma rede corporativa Windows, permitindo administrar tudo de forma organizada, segura e centralizada.</p>
+            </section>
+
+        </article>
+
+        <section class="quiz">
+            <div>
+                <h2>Teste seu conhecimento!</h2>
+                <p>Faça o quiz para fixar o conteúdo</p>
+            </div>
+            <a href="quiz/index.html">Fazer Quiz</a>
+        </section>
+
+    </main>
+
+</body>
+</html>
