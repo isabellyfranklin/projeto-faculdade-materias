@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gerenciamento de Disco</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navegacao">
+            <a href="../../../sextoTRI/index.html">← Voltar aos trimestres</a>
+        </nav>
+        <h1>Gerenciamento de Disco</h1>
+    </header>
+
+    <main>
+
+        <article class="resumo">
+
+            <section>
+                <p>O gerenciamento de disco é o conjunto de processos e ferramentas utilizados para organizar, configurar e controlar os discos de armazenamento de um sistema. Ele permite que o administrador prepare os discos para uso, divida o espaço de forma eficiente e monitore o estado dos dispositivos de armazenamento.</p>
+                <p>Um bom gerenciamento de disco garante melhor desempenho, segurança dos dados e aproveitamento eficiente do espaço disponível.</p>
+            </section>
+
+            <section>
+                <h2>1. Tipos de Disco</h2>
+                <p>Os discos utilizados em sistemas podem ser de diferentes tecnologias:</p>
+                <ul>
+                    <li><strong>HDD (Hard Disk Drive)</strong> — disco mecânico com partes móveis, maior capacidade e menor custo</li>
+                    <li><strong>SSD (Solid State Drive)</strong> — disco de estado sólido, mais rápido, silencioso e resistente</li>
+                    <li><strong>NVMe</strong> — tipo de SSD conectado diretamente ao barramento PCIe, com velocidade ainda maior</li>
+                    <li><strong>Disco virtual</strong> — disco simulado em ambiente virtualizado</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>2. Inicialização do Disco</h2>
+                <p>Antes de usar um disco novo, ele precisa ser inicializado. Existem dois estilos de partição:</p>
+                <ul>
+                    <li><strong>MBR (Master Boot Record)</strong> — padrão mais antigo, suporta discos de até 2 TB e no máximo 4 partições primárias</li>
+                    <li><strong>GPT (GUID Partition Table)</strong> — padrão moderno, suporta discos acima de 2 TB e até 128 partições</li>
+                </ul>
+                <h3>Quando usar cada um:</h3>
+                <p>Para sistemas modernos e discos grandes, o GPT é o recomendado. O MBR ainda é usado em sistemas mais antigos.</p>
+            </section>
+
+            <section>
+                <h2>3. Particionamento</h2>
+                <p>Particionar um disco significa <strong>dividir o espaço físico em regiões separadas</strong>, chamadas partições. Cada partição funciona de forma independente.</p>
+                <ul>
+                    <li><strong>Partição primária</strong> — partição principal, onde o sistema operacional pode ser instalado</li>
+                    <li><strong>Partição estendida</strong> — usada no MBR para criar mais de 4 divisões</li>
+                    <li><strong>Partição lógica</strong> — criada dentro da partição estendida</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>Um disco de 500 GB pode ser dividido em C: (sistema, 100 GB) e D: (dados, 400 GB).</p>
+            </section>
+
+            <section>
+                <h2>4. Formatação</h2>
+                <p>Formatar uma partição significa <strong>prepará-la com um sistema de arquivos</strong> para que o sistema operacional possa gravar e ler dados.</p>
+                <ul>
+                    <li><strong>NTFS</strong> — padrão do Windows, suporta arquivos grandes, permissões e criptografia</li>
+                    <li><strong>FAT32</strong> — compatível com muitos sistemas, mas limitado a arquivos de até 4 GB</li>
+                    <li><strong>exFAT</strong> — indicado para pen drives e cartões de memória, sem limite prático de tamanho</li>
+                    <li><strong>ext4</strong> — padrão do Linux</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>5. Disco Básico e Disco Dinâmico</h2>
+                <p>No Windows, os discos podem ser configurados como:</p>
+                <ul>
+                    <li><strong>Disco básico</strong> — configuração padrão, usa partições simples, indicado para uso geral</li>
+                    <li><strong>Disco dinâmico</strong> — permite recursos avançados como volumes distribuídos, espelhados e RAID por software</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>6. Volumes</h2>
+                <p>Um volume é uma área de armazenamento formatada e pronta para uso. Tipos de volumes em discos dinâmicos:</p>
+                <ul>
+                    <li><strong>Volume simples</strong> — ocupa espaço em um único disco</li>
+                    <li><strong>Volume distribuído (Spanned)</strong> — une espaço de dois ou mais discos em um único volume</li>
+                    <li><strong>Volume distribuído com desempenho (Striped / RAID-0)</strong> — grava dados simultaneamente em dois discos, aumentando a velocidade</li>
+                    <li><strong>Volume espelhado (Mirrored / RAID-1)</strong> — duplica os dados em dois discos para redundância</li>
+                    <li><strong>RAID-5</strong> — distribui dados e informações de paridade entre três ou mais discos</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>7. RAID</h2>
+                <p>O <strong>RAID (Redundant Array of Independent Disks)</strong> é uma tecnologia que combina múltiplos discos para aumentar desempenho, segurança ou ambos.</p>
+                <ul>
+                    <li><strong>RAID-0</strong> — alta velocidade, sem redundância. Se um disco falhar, todos os dados são perdidos</li>
+                    <li><strong>RAID-1</strong> — espelhamento. Os dados são gravados em dois discos simultaneamente</li>
+                    <li><strong>RAID-5</strong> — equilíbrio entre desempenho e segurança, usa paridade distribuída</li>
+                    <li><strong>RAID-10</strong> — combina RAID-0 e RAID-1, alta velocidade com redundância</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>8. Letra de Unidade e Pontos de Montagem</h2>
+                <p>No Windows, cada partição ou volume recebe uma <strong>letra de unidade</strong> (C:, D:, E:...) para identificação.</p>
+                <p>Também é possível montar um volume em uma <strong>pasta vazia</strong>, sem atribuir letra, integrando o espaço ao sistema de arquivos existente.</p>
+            </section>
+
+            <section>
+                <h2>9. Desfragmentação e Otimização</h2>
+                <p>Com o tempo, os arquivos em um HDD ficam fragmentados, ou seja, <strong>espalhados em pedaços pelo disco</strong>, reduzindo o desempenho.</p>
+                <ul>
+                    <li><strong>Desfragmentação</strong> — reorganiza os fragmentos para que os arquivos fiquem contíguos, melhorando a velocidade de leitura (apenas HDD)</li>
+                    <li><strong>TRIM</strong> — comando usado em SSDs para informar quais blocos podem ser apagados, mantendo o desempenho</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>10. Verificação de Erros</h2>
+                <p>O sistema pode verificar o disco em busca de <strong>setores defeituosos e erros no sistema de arquivos</strong>.</p>
+                <ul>
+                    <li>No Windows, o comando <strong>chkdsk</strong> verifica e corrige erros no disco</li>
+                    <li>Setores defeituosos são marcados para que o sistema não tente gravar dados neles</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>11. Cota de Disco</h2>
+                <p>A cota de disco permite que o administrador <strong>limite o espaço de armazenamento</strong> que cada usuário pode utilizar em um volume NTFS.</p>
+                <h3>Exemplo:</h3>
+                <p>O setor de RH pode ter um limite de 10 GB no servidor de arquivos, evitando que um único usuário ocupe todo o espaço disponível.</p>
+            </section>
+
+            <section>
+                <h2>12. Compactação e Criptografia</h2>
+                <p>Em volumes NTFS, é possível aplicar diretamente:</p>
+                <ul>
+                    <li><strong>Compactação</strong> — reduz o tamanho dos arquivos no disco automaticamente</li>
+                    <li><strong>EFS (Encrypting File System)</strong> — criptografa arquivos e pastas para proteger o acesso não autorizado</li>
+                    <li><strong>BitLocker</strong> — criptografa o volume inteiro, protegendo os dados mesmo se o disco for removido fisicamente</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Resumo Final</h2>
+                <p>O gerenciamento de disco envolve todas as etapas necessárias para preparar, organizar e manter os dispositivos de armazenamento de um sistema. Suas principais características são:</p>
+                <ul>
+                    <li>Inicialização com MBR ou GPT</li>
+                    <li>Particionamento e formatação com sistema de arquivos adequado</li>
+                    <li>Configuração de discos básicos ou dinâmicos</li>
+                    <li>Criação de volumes e configuração de RAID</li>
+                    <li>Atribuição de letras de unidade e pontos de montagem</li>
+                    <li>Desfragmentação e otimização do desempenho</li>
+                    <li>Verificação de erros e setores defeituosos</li>
+                    <li>Controle de cotas, compactação e criptografia</li>
+                </ul>
+                <p>Em uma frase: o gerenciamento de disco garante que o armazenamento seja organizado, seguro, eficiente e preparado para as necessidades do sistema e dos usuários.</p>
+            </section>
+
+        </article>
+
+        <section class="quiz">
+            <div>
+                <h2>Teste seu conhecimento!</h2>
+                <p>Faça o quiz para fixar o conteúdo</p>
+            </div>
+            <a href="quiz/index.html">Fazer Quiz</a>
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Serviço de Impressão</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navegacao">
+            <a href="../../../sextoTRI/index.html">← Voltar aos trimestres</a>
+        </nav>
+        <h1>Serviço de Impressão</h1>
+    </header>
+
+    <main>
+
+        <article class="resumo">
+
+            <section>
+                <p>O serviço de impressão em redes corporativas permite que múltiplos usuários compartilhem uma ou mais impressoras a partir de um servidor central. Em vez de cada computador ter sua própria impressora conectada diretamente, todas as solicitações de impressão passam pelo servidor, que as organiza e envia para a impressora correta.</p>
+                <p>Esse modelo é amplamente utilizado em empresas, escolas e órgãos públicos por trazer economia, organização e controle sobre o uso dos equipamentos.</p>
+            </section>
+
+            <section>
+                <h2>1. Centralização do Gerenciamento</h2>
+                <p>Com o serviço de impressão, o administrador gerencia todas as impressoras da empresa a partir de um único servidor, sem precisar configurar cada computador individualmente.</p>
+                <h3>Exemplo:</h3>
+                <p>Uma empresa com 5 andares e 200 funcionários pode ter todas as impressoras cadastradas em um único servidor. O administrador instala o driver uma vez no servidor e todos os computadores da rede recebem automaticamente, sem precisar instalar manualmente em cada máquina.</p>
+            </section>
+
+            <section>
+                <h2>2. Compartilhamento de Impressoras</h2>
+                <p>Uma única impressora pode ser utilizada por vários usuários ao mesmo tempo. O servidor organiza as solicitações em uma <strong>fila de impressão</strong> e envia os trabalhos em ordem.</p>
+                <h3>Exemplo:</h3>
+                <p>No setor financeiro, 15 funcionários compartilham uma impressora laser. Quando dois funcionários mandam imprimir ao mesmo tempo, o servidor coloca os dois trabalhos na fila e imprime um após o outro, sem conflito.</p>
+            </section>
+
+            <section>
+                <h2>3. Fila de Impressão</h2>
+                <p>A fila de impressão é a lista de trabalhos aguardando para serem impressos. O administrador pode:</p>
+                <ul>
+                    <li>Visualizar todos os trabalhos na fila</li>
+                    <li>Pausar um trabalho específico</li>
+                    <li>Cancelar uma impressão</li>
+                    <li>Alterar a prioridade de um trabalho</li>
+                    <li>Reiniciar um trabalho com erro</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>Um funcionário mandou imprimir 500 páginas por engano. O administrador consegue cancelar o trabalho diretamente na fila do servidor, evitando desperdício de papel e tinta.</p>
+            </section>
+
+            <section>
+                <h2>4. Controle de Permissões</h2>
+                <p>Nem todos os usuários precisam ter acesso a todas as impressoras. O serviço de impressão permite definir quem pode:</p>
+                <ul>
+                    <li>Imprimir em uma impressora específica</li>
+                    <li>Gerenciar a fila de impressão</li>
+                    <li>Cancelar trabalhos de outros usuários</li>
+                    <li>Administrar as configurações da impressora</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>A impressora colorida da diretoria só pode ser usada por diretores e pelo setor de marketing. Os demais funcionários só têm acesso às impressoras em preto e branco dos seus respectivos andares.</p>
+            </section>
+
+            <section>
+                <h2>5. Implantação Automática via GPO</h2>
+                <p>Utilizando as Políticas de Grupo (GPO) do Active Directory, o servidor de impressão pode instalar impressoras automaticamente nos computadores dos usuários, sem qualquer ação manual.</p>
+                <h3>Exemplo:</h3>
+                <p>Quando um funcionário do RH faz login em qualquer computador da empresa, a impressora do setor de RH aparece automaticamente instalada e pronta para uso. Se ele trocar de setor, a impressora antiga é removida e a nova é instalada automaticamente.</p>
+            </section>
+
+            <section>
+                <h2>6. Economia de Recursos</h2>
+                <p>O compartilhamento de impressoras reduz a quantidade de equipamentos necessários, gerando economia para a empresa.</p>
+                <ul>
+                    <li>Menos impressoras para comprar e manter</li>
+                    <li>Menos cartuchos e toners separados por setor</li>
+                    <li>Menor custo de manutenção</li>
+                    <li>Menor consumo de energia elétrica</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>Em vez de comprar 20 impressoras para 20 funcionários, a empresa compra 2 impressoras de alto volume e as compartilha via servidor, reduzindo o custo em até 70%.</p>
+            </section>
+
+            <section>
+                <h2>7. Monitoramento e Auditoria</h2>
+                <p>O servidor de impressão registra logs com informações sobre cada trabalho realizado, permitindo que o administrador monitore o uso das impressoras.</p>
+                <ul>
+                    <li>Quem imprimiu</li>
+                    <li>Quantas páginas foram impressas</li>
+                    <li>Qual impressora foi utilizada</li>
+                    <li>Data e horário da impressão</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>Ao final do mês, o administrador gera um relatório mostrando que o setor de vendas imprimiu 3.000 páginas, enquanto o RH imprimiu 800. Com esse dado, a empresa pode criar cotas de impressão por setor.</p>
+            </section>
+
+            <section>
+                <h2>8. Alta Disponibilidade — Pool de Impressoras</h2>
+                <p>O pool de impressoras agrupa duas ou mais impressoras idênticas em uma única fila. Quando uma impressora está ocupada ou com problema, o servidor automaticamente direciona o trabalho para outra disponível.</p>
+                <h3>Exemplo:</h3>
+                <p>O servidor de impressão tem duas impressoras idênticas agrupadas em pool. Se a impressora 1 travar com papel, o trabalho do próximo usuário vai automaticamente para a impressora 2, sem interrupção.</p>
+            </section>
+
+            <section>
+                <h2>9. Prioridade de Impressão</h2>
+                <p>É possível configurar prioridades para que determinados usuários ou setores tenham seus trabalhos impressos antes dos demais.</p>
+                <h3>Exemplo:</h3>
+                <p>A diretoria tem prioridade máxima na fila. Mesmo que um funcionário tenha mandado imprimir 100 páginas antes, o documento de 2 páginas do diretor é impresso primeiro assim que a impressora ficar disponível.</p>
+            </section>
+
+            <section>
+                <h2>10. Impressão Segura</h2>
+                <p>A impressão segura exige que o usuário se autentique diretamente na impressora antes de o documento ser impresso, evitando que documentos confidenciais fiquem expostos na bandeja.</p>
+                <h3>Exemplo:</h3>
+                <p>O departamento jurídico envia um contrato sigiloso para impressão. O documento só é impresso quando o advogado se aproxima da impressora e digita seu PIN ou aproxima seu crachá. Ninguém mais consegue ver o documento.</p>
+            </section>
+
+            <section>
+                <h2>Resumo Final</h2>
+                <p>O serviço de impressão em rede oferece uma solução centralizada, segura e eficiente para gerenciar impressoras em ambientes corporativos. Suas principais vantagens são:</p>
+                <ul>
+                    <li>Gerenciamento centralizado de todas as impressoras</li>
+                    <li>Compartilhamento entre múltiplos usuários com fila organizada</li>
+                    <li>Controle de permissões por usuário ou setor</li>
+                    <li>Implantação automática de impressoras via GPO</li>
+                    <li>Economia de equipamentos e manutenção</li>
+                    <li>Monitoramento e auditoria do uso</li>
+                    <li>Alta disponibilidade com pool de impressoras</li>
+                    <li>Prioridade de impressão configurável</li>
+                    <li>Impressão segura com autenticação</li>
+                </ul>
+                <p>Em uma frase: o serviço de impressão transforma impressoras isoladas em um recurso compartilhado, controlado e eficiente para toda a empresa.</p>
+            </section>
+
+        </article>
+
+        <section class="quiz">
+            <div>
+                <h2>Teste seu conhecimento!</h2>
+                <p>Faça o quiz para fixar o conteúdo</p>
+            </div>
+            <a href="quiz/index.html">Fazer Quiz</a>
+        </section>
+
+    </main>
+
+</body>
+</html>

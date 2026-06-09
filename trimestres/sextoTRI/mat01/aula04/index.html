@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DHCP e DNS</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navegacao">
+            <a href="../../../sextoTRI/index.html">← Voltar aos trimestres</a>
+        </nav>
+        <h1>Servidores DHCP e DNS</h1>
+    </header>
+
+    <main>
+
+        <article class="resumo">
+
+            <section>
+                <p>O <strong>DHCP</strong> (Dynamic Host Configuration Protocol) e o <strong>DNS</strong> (Domain Name System) são dois servidores essenciais para o funcionamento de uma rede. O DHCP distribui endereços IP automaticamente para os dispositivos, enquanto o DNS traduz nomes de domínio em endereços IP.</p>
+            </section>
+
+            <!-- ==================== DHCP ==================== -->
+
+            <section>
+                <h2>DHCP — Dynamic Host Configuration Protocol</h2>
+                <p>Protocolo responsável por atribuir endereços IP automaticamente a dispositivos conectados à rede, sem necessidade de configuração manual.</p>
+                <p>Além do IP, o DHCP também fornece:</p>
+                <ul>
+                    <li>Máscara de sub-rede</li>
+                    <li>Gateway padrão</li>
+                    <li>Endereço do servidor DNS</li>
+                </ul>
+                <p>Funciona no modelo <strong>cliente–servidor</strong>: o cliente solicita e o servidor concede. Utiliza as portas <strong>UDP 67</strong> (servidor) e <strong>UDP 68</strong> (cliente).</p>
+            </section>
+
+            <section>
+                <h2>1. Processo DORA</h2>
+                <p>A comunicação entre cliente e servidor DHCP segue quatro etapas:</p>
+                <ol>
+                    <li><strong>Discover</strong> — o cliente envia um broadcast procurando um servidor DHCP na rede</li>
+                    <li><strong>Offer</strong> — o servidor responde oferecendo um IP disponível</li>
+                    <li><strong>Request</strong> — o cliente solicita formalmente o IP oferecido</li>
+                    <li><strong>Acknowledge</strong> — o servidor confirma e registra a concessão (lease)</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>2. Pool de Endereços</h2>
+                <p>O servidor DHCP possui um intervalo de IPs disponíveis para distribuição, chamado de <strong>pool</strong>. O administrador define quais IPs fazem parte desse intervalo.</p>
+            </section>
+
+            <section>
+                <h2>3. Lease (Concessão)</h2>
+                <p>Os endereços IP não são atribuídos permanentemente. Eles são <strong>emprestados por um tempo determinado</strong>. Quando o prazo expira, o cliente pode renovar ou liberar o IP.</p>
+            </section>
+
+            <section>
+                <h2>4. Reserva de IP</h2>
+                <p>É possível vincular um IP fixo a um <strong>MAC address</strong> específico. Assim, um dispositivo sempre recebe o mesmo endereço IP, mesmo com o DHCP ativo.</p>
+                <h3>Exemplo:</h3>
+                <p>Uma impressora de rede pode ter sempre o mesmo IP para facilitar o acesso.</p>
+            </section>
+
+            <section>
+                <h2>5. Escopos e Exclusões</h2>
+                <p>O administrador pode <strong>excluir IPs do pool</strong> para reservar endereços a servidores e equipamentos com IP fixo, evitando conflitos na rede.</p>
+            </section>
+
+            <section>
+                <h2>6. Relay Agent</h2>
+                <p>Quando há mais de uma sub-rede, o <strong>relay agent</strong> encaminha as solicitações DHCP entre as redes, permitindo que um único servidor DHCP atenda a toda a infraestrutura.</p>
+            </section>
+
+            <!-- ==================== DNS ==================== -->
+
+            <section>
+                <h2>DNS — Domain Name System</h2>
+                <p>Sistema hierárquico que <strong>converte nomes de domínio</strong> (como google.com) em endereços IP (como 142.250.79.110), permitindo que os usuários acessem sites e serviços pelo nome, sem precisar memorizar números.</p>
+                <p>Funciona como a <strong>"agenda telefônica" da internet</strong>. Utiliza a porta <strong>UDP/TCP 53</strong>.</p>
+            </section>
+
+            <section>
+                <h2>7. Como funciona a resolução DNS</h2>
+                <p>Quando um usuário digita um endereço, o processo de resolução segue estas etapas:</p>
+                <ol>
+                    <li>O sistema verifica o <strong>cache local</strong> do dispositivo</li>
+                    <li>Se não encontrar, consulta o <strong>resolver recursivo</strong> (geralmente do provedor de internet)</li>
+                    <li>O resolver pergunta ao <strong>servidor raiz</strong>, que indica o servidor TLD responsável (.com, .br etc.)</li>
+                    <li>O TLD aponta para o <strong>servidor autoritativo</strong> do domínio</li>
+                    <li>O autoritativo retorna o IP; o resolver <strong>armazena em cache</strong> e entrega ao cliente</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>8. Tipos de Registros DNS</h2>
+                <p>Os registros DNS definem como o servidor responde às consultas:</p>
+                <ul>
+                    <li><strong>A</strong> — mapeia domínio para IPv4</li>
+                    <li><strong>AAAA</strong> — mapeia domínio para IPv6</li>
+                    <li><strong>CNAME</strong> — apelido que aponta para outro domínio</li>
+                    <li><strong>MX</strong> — indica o servidor de e-mail do domínio</li>
+                    <li><strong>NS</strong> — aponta os servidores de nomes autoritativos</li>
+                    <li><strong>PTR</strong> — resolução reversa: IP → nome de domínio</li>
+                    <li><strong>TXT</strong> — texto livre, usado para SPF, DKIM e verificações</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>9. Cache DNS</h2>
+                <p>As respostas DNS são armazenadas por um tempo definido chamado <strong>TTL (Time to Live)</strong>. Isso evita consultas repetidas e agiliza o acesso a domínios já visitados.</p>
+            </section>
+
+            <section>
+                <h2>10. DNS Reverso</h2>
+                <p>Enquanto o DNS converte nome → IP, o <strong>DNS reverso</strong> faz o contrário: IP → nome. É utilizado em logs de servidores e na verificação de autenticidade de e-mails.</p>
+            </section>
+
+            <section>
+                <h2>11. DNSSEC</h2>
+                <p>Extensão de segurança do DNS que <strong>assina digitalmente os registros</strong>, evitando ataques de falsificação conhecidos como <strong>DNS poisoning</strong> (envenenamento de cache).</p>
+            </section>
+
+            <section>
+                <h2>12. Zonas Primária e Secundária</h2>
+                <ul>
+                    <li><strong>Zona primária</strong> — servidor autoritativo, onde os registros são criados e editados</li>
+                    <li><strong>Zona secundária</strong> — cópia de backup que recebe os dados via transferência de zona</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Resumo Final</h2>
+                <p>DHCP e DNS trabalham juntos: o DHCP atribui o endereço IP ao dispositivo e já entrega o endereço do servidor DNS junto. A partir daí, o DNS resolve os nomes para que a navegação aconteça.</p>
+                <ul>
+                    <li><strong>DHCP</strong> resolve: "qual é o meu IP na rede?"</li>
+                    <li><strong>DNS</strong> resolve: "qual é o IP do site que quero acessar?"</li>
+                </ul>
+                <p>Em uma frase: o DHCP configura o dispositivo na rede e o DNS garante que ele encontre os destinos pelo nome.</p>
+            </section>
+
+        </article>
+
+        <section class="quiz">
+            <div>
+                <h2>Teste seu conhecimento!</h2>
+                <p>Faça o quiz para fixar o conteúdo</p>
+            </div>
+            <a href="quiz/index.html">Fazer Quiz</a>
+        </section>
+
+    </main>
+
+</body>
+</html>

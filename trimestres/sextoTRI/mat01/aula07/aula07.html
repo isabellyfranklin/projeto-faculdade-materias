@@ -1,0 +1,180 @@
+tml<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Aplicação da GPO</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navegacao">
+            <a href="../../../../index.html">← Voltar aos trimestres</a>
+        </nav>
+        <h1>Aplicação da GPO e suas Particularidades</h1>
+    </header>
+
+    <main>
+
+        <article class="resumo">
+
+            <section>
+                <p>A GPO (Group Policy Object) é um conjunto de configurações aplicadas automaticamente a usuários e computadores dentro de um domínio do Active Directory. Ela permite que o administrador defina regras de segurança, restrições e configurações de ambiente de forma centralizada, sem precisar configurar cada máquina individualmente.</p>
+                <p>As GPOs são uma das ferramentas mais poderosas do Active Directory e estão presentes em praticamente toda infraestrutura de TI corporativa baseada em Windows.</p>
+            </section>
+
+            <section>
+                <h2>1. O que é uma GPO</h2>
+                <p>Uma GPO é um objeto do Active Directory que contém um conjunto de políticas. Cada política define uma configuração específica que será aplicada aos computadores ou usuários do domínio.</p>
+                <ul>
+                    <li>Configurações de segurança</li>
+                    <li>Restrições de acesso</li>
+                    <li>Configurações de software</li>
+                    <li>Configurações de ambiente de trabalho</li>
+                    <li>Scripts de inicialização e encerramento</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>Uma GPO chamada "Política de Senhas" pode exigir que todos os usuários do domínio criem senhas com no mínimo 8 caracteres, letras maiúsculas, números e símbolos.</p>
+            </section>
+
+            <section>
+                <h2>2. Onde as GPOs são aplicadas</h2>
+                <p>As GPOs podem ser vinculadas a três níveis do Active Directory:</p>
+                <ul>
+                    <li><strong>Site</strong> — aplicada a todos os computadores de um local físico da rede</li>
+                    <li><strong>Domínio</strong> — aplicada a todos os usuários e computadores do domínio</li>
+                    <li><strong>Unidade Organizacional (OU)</strong> — aplicada apenas aos objetos dentro daquela OU específica</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>A empresa tem três setores: RH, TI e Financeiro. Uma GPO vinculada ao domínio inteiro bloqueia o uso de pen drives em todos os computadores. Já uma GPO vinculada apenas à OU de TI libera o uso de pen drives somente para os técnicos.</p>
+            </section>
+
+            <section>
+                <h2>3. Ordem de Aplicação das GPOs</h2>
+                <p>Quando existem várias GPOs, elas são aplicadas em uma ordem específica, chamada de <strong>LSDOU</strong>:</p>
+                <ol>
+                    <li><strong>L — Local</strong>: políticas definidas localmente no próprio computador</li>
+                    <li><strong>S — Site</strong>: políticas vinculadas ao site do Active Directory</li>
+                    <li><strong>D — Domain</strong>: políticas vinculadas ao domínio</li>
+                    <li><strong>OU — Organizational Unit</strong>: políticas vinculadas à unidade organizacional</li>
+                </ol>
+                <p>A última política aplicada tem prioridade. Ou seja, a GPO da OU sobrescreve as anteriores em caso de conflito.</p>
+                <h3>Exemplo:</h3>
+                <p>O domínio define papel de parede padrão para todos. A OU da diretoria tem uma GPO com papel de parede diferente. Os diretores verão o papel de parede da OU, pois ela foi aplicada por último e tem prioridade.</p>
+            </section>
+
+            <section>
+                <h2>4. GPO de Computador x GPO de Usuário</h2>
+                <p>As configurações dentro de uma GPO são divididas em duas seções:</p>
+                <ul>
+                    <li><strong>Configurações do Computador</strong> — aplicadas quando o computador é iniciado, independentemente de quem faz login</li>
+                    <li><strong>Configurações do Usuário</strong> — aplicadas quando o usuário faz login, independentemente de qual computador está usando</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>A configuração de firewall é feita em "Configurações do Computador", pois precisa estar ativa antes mesmo de alguém fazer login. Já a configuração de papel de parede corporativo é feita em "Configurações do Usuário", pois segue o funcionário em qualquer computador que ele use.</p>
+            </section>
+
+            <section>
+                <h2>5. Herança de GPO</h2>
+                <p>As GPOs seguem o princípio de herança: OUs filhas herdam automaticamente as GPOs das OUs pai e do domínio.</p>
+                <h3>Exemplo:</h3>
+                <p>O domínio tem uma GPO que bloqueia o Painel de Controle. A OU "Vendas" está dentro do domínio, então todos os funcionários de vendas também terão o Painel de Controle bloqueado, mesmo sem uma GPO específica na OU de Vendas.</p>
+            </section>
+
+            <section>
+                <h2>6. Bloquear Herança</h2>
+                <p>É possível bloquear a herança em uma OU específica, impedindo que ela receba GPOs dos níveis superiores.</p>
+                <h3>Exemplo:</h3>
+                <p>A OU de TI tem a herança bloqueada. Mesmo que o domínio bloqueie o acesso ao CMD, os técnicos de TI continuam com acesso, pois a OU deles não herda as políticas do domínio.</p>
+            </section>
+
+            <section>
+                <h2>7. Forçar GPO (Enforced)</h2>
+                <p>A opção <strong>Enforced</strong> (Forçar) garante que uma GPO seja aplicada em todos os níveis abaixo, mesmo que a herança esteja bloqueada. Ela não pode ser sobrescrita por GPOs de níveis inferiores.</p>
+                <h3>Exemplo:</h3>
+                <p>O domínio tem uma GPO de segurança marcada como Enforced, exigindo antivírus em todos os computadores. Mesmo que a OU de TI bloqueie a herança, essa política de antivírus ainda será aplicada em todas as máquinas.</p>
+            </section>
+
+            <section>
+                <h2>8. Filtragem de Segurança</h2>
+                <p>Por padrão, uma GPO se aplica a todos os objetos da OU onde está vinculada. Com a filtragem de segurança, é possível <strong>aplicar a GPO apenas para usuários ou computadores específicos</strong>.</p>
+                <h3>Exemplo:</h3>
+                <p>A OU do RH tem 10 funcionários. Uma GPO de restrição de internet deve ser aplicada apenas a 3 estagiários. Com a filtragem de segurança, a GPO é configurada para afetar somente o grupo "Estagiários RH", sem impactar os demais funcionários da OU.</p>
+            </section>
+
+            <section>
+                <h2>9. Quando as GPOs são aplicadas</h2>
+                <p>As GPOs são aplicadas nos seguintes momentos:</p>
+                <ul>
+                    <li>Na inicialização do computador (configurações de computador)</li>
+                    <li>No login do usuário (configurações de usuário)</li>
+                    <li>A cada <strong>90 a 120 minutos</strong> automaticamente em segundo plano</li>
+                    <li>Imediatamente ao executar o comando <strong>gpupdate /force</strong> no CMD</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>O administrador cria uma nova GPO bloqueando o acesso ao YouTube. Para não esperar o próximo ciclo automático, ele executa o comando <strong>gpupdate /force</strong> nos computadores, aplicando a política imediatamente.</p>
+            </section>
+
+            <section>
+                <h2>10. Precedência entre GPOs</h2>
+                <p>Quando duas GPOs conflitam, a que tem <strong>número de ordem menor</strong> na lista tem maior prioridade. O administrador pode reorganizar a ordem das GPOs no console.</p>
+                <h3>Exemplo:</h3>
+                <p>A OU de Vendas tem duas GPOs: a GPO-1 define papel de parede azul e a GPO-2 define papel de parede cinza. Como a GPO-1 tem prioridade maior, todos os usuários de Vendas verão o papel de parede azul.</p>
+            </section>
+
+            <section>
+                <h2>11. GPO e Scripts</h2>
+                <p>As GPOs podem executar scripts automaticamente em momentos específicos:</p>
+                <ul>
+                    <li><strong>Inicialização do computador</strong> — script roda antes do login</li>
+                    <li><strong>Encerramento do computador</strong> — script roda ao desligar</li>
+                    <li><strong>Logon do usuário</strong> — script roda quando o usuário entra</li>
+                    <li><strong>Logoff do usuário</strong> — script roda quando o usuário sai</li>
+                </ul>
+                <h3>Exemplo:</h3>
+                <p>Ao fazer login, um script de logon conecta automaticamente o drive de rede do setor do usuário. Ao fazer logoff, outro script desconecta o drive, mantendo a rede organizada.</p>
+            </section>
+
+            <section>
+                <h2>12. Ferramentas para Gerenciar GPOs</h2>
+                <p>O Windows Server oferece ferramentas específicas para criar e gerenciar GPOs:</p>
+                <ul>
+                    <li><strong>GPMC (Group Policy Management Console)</strong> — console principal para criar, editar, vincular e monitorar GPOs</li>
+                    <li><strong>GPME (Group Policy Management Editor)</strong> — editor de configurações dentro de uma GPO</li>
+                    <li><strong>gpupdate /force</strong> — comando para forçar a aplicação imediata das GPOs</li>
+                    <li><strong>gpresult /r</strong> — comando que mostra quais GPOs estão sendo aplicadas no computador atual</li>
+                    <li><strong>RSoP (Resultant Set of Policy)</strong> — ferramenta que simula e exibe o resultado final das políticas aplicadas a um usuário ou computador</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Resumo Final</h2>
+                <p>A GPO é uma ferramenta essencial do Active Directory que permite aplicar configurações e políticas de forma automática e centralizada em toda a rede. Suas principais particularidades são:</p>
+                <ul>
+                    <li>Pode ser vinculada a Site, Domínio ou OU</li>
+                    <li>Segue a ordem de aplicação LSDOU</li>
+                    <li>Divide configurações entre Computador e Usuário</li>
+                    <li>Funciona com herança entre OUs</li>
+                    <li>Permite bloquear herança ou forçar aplicação com Enforced</li>
+                    <li>Permite filtragem por grupo de segurança</li>
+                    <li>É aplicada automaticamente a cada 90 minutos ou via gpupdate /force</li>
+                    <li>Suporta execução de scripts em logon, logoff, inicialização e encerramento</li>
+                </ul>
+                <p>Em uma frase: a GPO é o mecanismo que permite ao administrador controlar o comportamento de toda a rede a partir de um único ponto, de forma automática, organizada e segura.</p>
+            </section>
+
+        </article>
+
+        <section class="quiz">
+            <div>
+                <h2>Teste seu conhecimento!</h2>
+                <p>Faça o quiz para fixar o conteúdo</p>
+            </div>
+            <a href="quiz/index.html">Fazer Quiz</a>
+        </section>
+
+    </main>
+
+</body>
+</html>
