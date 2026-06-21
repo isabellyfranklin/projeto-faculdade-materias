@@ -59,7 +59,7 @@ header p{
 .recentes{
     width: 100%;
     margin-bottom: 15px;
-    height: 500px;
+    background-color: red;
 }
 
 @media screen and (max-width: 837px) {
@@ -71,6 +71,7 @@ header p{
     justify-content: flex-start;
 }
 }
+
 
 .recentes h2{
     font-size: 20px;
@@ -212,7 +213,6 @@ header p{
 
 
 /*MODAL de aviso*/
-
 .modal-overlay {
   position: fixed;
   inset: 0;
